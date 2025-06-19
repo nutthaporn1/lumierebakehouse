@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumière Bakehouse</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fffaf4;
+      color: #333;
+    }
+    header {
+      background-color: #fff;
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+    }
+    header img {
+      width: 180px;
+      margin-bottom: 1rem;
+    }
+    header h1 {
+      color: #bfa046;
+      margin: 0;
+      font-size: 2rem;
+    }
+    .product-section {
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background-color: #fff7ed;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    .product-section img {
+      width: 100%;
+      border-radius: 1rem;
+    }
+    .product-info {
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .product-info h2 {
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+      color: #222;
+    }
+    .cart {
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .cart label, .cart input, .cart select {
+      font-size: 1rem;
+      margin: 0.5rem;
+    }
+    .cart input[type="number"] {
+      width: 60px;
+    }
+    .summary {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+    }
+    .payment-section {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .payment-section textarea {
+      width: 80%;
+      height: 100px;
+      margin-top: 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+    }
+    .payment-section input[type="file"] {
+      margin-top: 1rem;
+    }
+    button {
+      margin-top: 1.5rem;
+      padding: 0.7rem 2rem;
+      background-color: #bfa046;
+      color: white;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #999;
+      padding-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="IMG_4059.png" alt="Premium Butter Shio Pan">
+    <h1>LUMIÈRE BAKEHOUSE</h1>
+  </header>
+
+  <section class="product-section">
+    <div class="product-info">
+      <h2>Premium Butter Japanese Shio Pan</h2>
+      <p>First Round Pre-Order: 17–22 May 2025</p>
+    </div>
+    <div class="cart">
+      <label>1 piece - 70 THB</label>
+      <input type="number" id="singleQty" value="0" min="0" onchange="calculateTotal()">
+      <br>
+      <label>4 pieces - 260 THB</label>
+      <input type="number" id="setQty" value="0" min="0" onchange="calculateTotal()">
+      <div class="summary">
+        Total: <span id="totalPrice">0</span> THB
+      </div>
+    </div>
+    <div class="payment-section">
+      <h3>Payment Information</h3>
+      <textarea placeholder="Additional note (e.g. name, phone, delivery request)"></textarea>
+      <br>
+      <label>Upload payment slip:</label><br>
+      <input type="file" accept="image/*">
+      <br>
+      <button onclick="alert('Thank you! Please confirm your payment on Instagram @Lumiere_Bakehouse')">Submit Order</button>
+    </div>
+  </section>
+
+  <footer>
+    Instagram: <a href="https://instagram.com/Lumiere_Bakehouse" target="_blank">@Lumiere_Bakehouse</a><br>
+    ILLUMINATE YOUR DAY WITH SWEETNESS
+  </footer>
+
+  <script>
+    function calculateTotal() {
+      const single = parseInt(document.getElementById('singleQty').value) || 0;
+      const set = parseInt(document.getElementById('setQty').value) || 0;
+      const total = (single * 70) + (set * 260);
+      document.getElementById('totalPrice').textContent = total;
+    }
+  </script>
+</body>
+</html>
