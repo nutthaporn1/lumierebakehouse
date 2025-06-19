@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumière Bakehouse</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fffaf4;
+      color: #2c2c2c;
+    }
+    header {
+      background-color: #fff;
+      padding: 1.5rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      color: #d4af37;
+      margin: 0;
+    }
+    .intro {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .intro p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+    .menu {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      background-color: #fff7ed;
+      border-radius: 1rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .menu h2 {
+      text-align: center;
+      color: #b38900;
+      font-size: 2rem;
+    }
+    .item {
+      margin: 1rem 0;
+      padding: 1rem;
+      border-bottom: 1px solid #f0e0c0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .item:last-child {
+      border-bottom: none;
+    }
+    .item button {
+      background-color: #d4af37;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: #fff;
+      color: #999;
+    }
+    .social {
+      margin-top: 1rem;
+      font-size: 1rem;
+    }
+    .social a {
+      color: #d4af37;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Lumière Bakehouse</h1>
+  </header>
+
+  <section class="intro">
+    <p>สัมผัสรสชาติแห่งความพรีเมียมกับ <strong>Shio Pan สไตล์ญี่ปุ่น</strong> หอมเนยสดแท้ กรอบนอกนุ่มใน ทำสดใหม่ทุกวัน พร้อมเสิร์ฟความสุขถึงมือคุณ</p>
+  </section>
+
+  <section class="menu">
+    <h2>เมนูของเรา</h2>
+    <div class="item">
+      <span>ชิ้นเดียว - 70 บาท</span>
+      <button onclick="order('1 ชิ้น - 70 บาท')">สั่งซื้อ</button>
+    </div>
+    <div class="item">
+      <span>ชุด 4 ชิ้น - 260 บาท</span>
+      <button onclick="order('4 ชิ้น - 260 บาท')">สั่งซื้อ</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>ติดตามเราได้ที่</p>
+    <div class="social">
+      Instagram: <a href="https://instagram.com/Lumiere_Bakehouse" target="_blank">@Lumiere_Bakehouse</a>
+    </div>
+  </footer>
+
+  <script>
+    function order(item) {
+      const message = `สวัสดีค่ะ สนใจสั่งซื้อ ${item} จากเว็บไซต์ค่ะ`;
+      const url = `https://instagram.com/Lumiere_Bakehouse`;
+      alert(`กรุณาทักไปที่ Instagram เพื่อสั่งซื้อ:\n\n${message}`);
+      window.open(url, '_blank');
+    }
+  </script>
+</body>
+</html>
